@@ -53,8 +53,6 @@ const app = {
         inputPrix.appendChild = nodeTd3;
     },
 
-    
-
     // ici, on va faire la vérification des input !
     // Pour le moment, il me semble plus judicieux de faire un if et un else
     // dans le if, on veut vérifier si inputReference == referenceRegex, que 
