@@ -7,22 +7,24 @@ const app = {
         // On défini les regex + les input + le bouton
         referenceRegex : new RegExp('([a-z]){3}-([0-9]){3}'), // autorise 3 lettres maj et min et 3 chiffre entre 0 et 9
         nameRegex : new RegExp('([A-Z]){1}([a-z]){9}'), // autorise les caractères de a à z avec seulement 10 min et max
-
-
-        inputReference : document.querySelector("#reference-input").value,
-        inputName : document.querySelector("#produit-input").value,
-        inputPrix : document.querySelector("#prix-input").value,
-        button : document.querySelector("#button"),
+        inputReference : document.getElementById('reference-input').value,
+        inputName : document.getElementById('produit-input').value,
+        inputPrix : document.getElementById('prix-input').value,
+        form : document.getElementById('formulaire'),
 
 // On va devoir par la suite faire un AddEventListener à chaque fois qu'on appuye sur le bouton
 
 
     /**
      * Méthode d'initialisation de notre module
+     * https://medium.com/better-programming/click-vs-submit-eventlisteners-536b62be9359
      */
     init: function() {
-        console.log(nameRegex),
-        button.addEventListener('click', app.handleClick);
+    //TODO : RÉCUPÉRER LES VALEURS DES INPUTS + VÉRIFIER LES AUTRES FONCTIONS
+    // Raison : quand on appuye sur envoyer, on arrive pas à les voir dans le console.log, ni à voir les messages d'erreurs
+    // Mais où est la couille (de) Simone ?
+        app.form.addEventListener('submit', app.handleClick);
+        console.log(app.inputReference);
     },
 
     //ici, il faut récupérer les éléments input de Reférence, name et prix
@@ -35,7 +37,10 @@ const app = {
 
     handleClick: function (evt){
         evt.preventDefault();
-        let nodeTr = document.createElement("td");
+        app.inputVerif(app.inputReference, app.inputName, app.inputPrix);
+    },
+    
+    newRow : function (){
         let nodeTd1 = document.createElement("tr");
         let nodeTd2 = document.createElement("tr");
         let nodeTd3 = document.createElement("tr");
@@ -52,6 +57,7 @@ const app = {
         inputName.appendChild = nodeTd2;
         inputPrix.appendChild = nodeTd3;
     },
+    
 
     // ici, on va faire la vérification des input !
     // Pour le moment, il me semble plus judicieux de faire un if et un else
@@ -63,7 +69,35 @@ const app = {
     // sous la case de l'input correspondante !
 
     inputVerif : function () {
+        if (app.inputReference !== app.referenceRegex || app.inputName !== app.nameRegex ){
 
+           if(app.inputReference !== app.referenceRegex) {
+                let errorRef = document.querySelector("#reference-input");
+                let errorMessageRef = document.createElement('p');
+                errorMessageRef.className = 'error-message';
+                errorMessageRef.textContent = 'Veuillez entrer une référence valide';
+                errorRef.appendChild = errorMessageRef;
+            }
+            else if(app.inputName !== app.nameRegex || inputName == '') {
+                let errorName = document.querySelector("#produit-input");
+                let errorMessageName = document.createElement('p');
+                errorMessageName.className = 'error-message';
+                errorMessageName.textContent = 'Veuillez entrer un nom de produit valide';
+                errorName.appendChild = errorMessageName;
+            }
+            else if(app.inputPrix == '') {
+                let errorName = document.querySelector("#produit-input");
+                let errorMessageName = document.createElement('p');
+                errorMessageName.className = 'error-message';
+                errorMessageName.textContent = 'Veuillez entrer un prix';
+                errorName.appendChild = errorMessageName;
+            } 
+        } else {
+            app.newRow();
+        }
     }
-};
+}
 
+// ici, on écoute Init au chargement du DOM
+
+document.addEventListener('DOMContentLoaded', app.init);
