@@ -6,8 +6,12 @@ Notre README va nous servir à ce qu'on puisse tracker notre avancement au fur e
 - Création du fichier HTML, CSS et JS avec les fichiers qu'on a besoin
 - Dans app.js, on a défini les regex, récupéré les input et le bouton
 
+24/01/2021 :
+
+- Création des fonctions newRow et inputVerif
+- Quand on test sur le formulaire, on ne récupère pas les inputs, donc à voir où est le problème
 
 Prochaine étape : 
 
-- suivre le code de Djyp pour réussir à faire la vérification des input 
-- réussir à entrer les valeurs saisies dans les champs sur le tableau
+- Voir avec un debbuger comment se déroule le code
+- Essayer de trouver une solution pour la récupération des inputs
