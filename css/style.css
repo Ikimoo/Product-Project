@@ -62,11 +62,27 @@ input {
 }
 
 label {
-    padding-left: 4em;
+    padding-left: 4rem;
     font-weight : bold;
     color: var(--couleurfoncee1);
     font-size: 18px;
 }
+
+.error-message {
+    color : var(--couleurfoncee2);
+    font-style: italic;
+    font-size: 0.9rem;
+    padding-left: 4rem;
+    margin-top : .7em;
+}
+
+#reference-input-message{
+    display : none;
+}
+#produit-input-message{
+    display : none;
+}
+
 
 /* BOUTON*/
 #button {

@@ -26,6 +26,7 @@ const app = {
 
         app.form.addEventListener('submit', app.handleClick);
 
+
     },
 
     //ici, il faut récupérer les éléments input de Reférence, name et prix
@@ -43,11 +44,50 @@ const app = {
         let produitValue = app.inputName.value;
         let prixValue = app.inputPrix.value;
 
+        // cette partie fonctionne
+        if (app.inputVerif(referenceValue,produitValue) === true){
+            app.newRow(referenceValue, produitValue, prixValue);
+            app.inputReference.value = "";
+            app.inputName.value = "";
+            app.inputPrix.value = "";
+        }
+        ;
 
-        app.newRow(referenceValue, produitValue, prixValue);
     },
 
-    // TODO : vider les champs input après envoi
+    inputVerif: function(referenceValue, produitValue) {
+
+        // TODO : Faire fonctionner inputVerif
+        // on vérifie dans un premier temps l'input Reference
+        if (referenceValue.match(app.referenceRegex) === null || produitValue.match(app.nameRegex) === null ){
+
+        
+        if (referenceValue.match(app.referenceRegex) === null) {
+            console.log(matchCheck);
+                // on va chercher le message d'erreur 
+                let referenceInputErrorMessage = document.getElementById('reference-input-message');
+                console.log(referenceInputErrorMessage);
+                //on passe son affichage en display block
+                let styleCheck = referenceInputErrorMessage.style.display;
+                referenceInputErrorMessage.style.display = 'block';
+                console.log(styleCheck);
+
+            } 
+
+        if (produitValue.match(app.nameRegex) === null) {
+                // on va chercher le message d'erreur 
+                let produitInputErrorMessage = document.getElementById('reference-input-message');
+                //on passe son affichage en display block
+                produitInputErrorMessage.style.display = 'block';
+                
+            } 
+            
+            return false;
+        }
+        else {
+            return true;
+        }
+    },
 
     newRow: function(inputReference, inputName, inputPrix) {
 
@@ -67,6 +107,7 @@ const app = {
         newTr.appendChild(nodeTd2);
         newTr.appendChild(nodeTd3);
     }
+
 }
 
 

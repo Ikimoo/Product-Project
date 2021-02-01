@@ -23,10 +23,20 @@ Quant à la vérification, on prend une autre approche plus simple :
 - Le but est d'avoir les messages qui s'affichent en fonction de la vérification. Pour cela, si une entrée est juste, avec la balise reste en display:none. Par contre, si l'entrée saisie est fausse, alors on affiche la balise p grâce à display:block.
 - ^ on a fait le même genre d'exercice avec la bataille navale, donc à mon avis il faut juste revoir un peu le code et essayer de le comprendre.
 
-## Prochaine étape :
+*Fait par Charlotte :*
 
-- vider les input dans la fonction newRow()
-- faire les véfications : /!\ on s'occupe d'abord de reference-input, et tant qu'on arrive pas à faire la vérification correctement, on ne passe pas à la suite !! TEST, TEST, TEST !!
+- Modification du HTML : OK
+  
+- Ajout des classes CSS : OK
+  
+- Lorsque Input est true => nouvelle ligne au tableau +  input vidé (fait dans la fonction handleClick, comme cela été le cas dans BN) => fonctionnel
+
+## Prochaine étape
+
+- Faire en sorte que InputVerif fonctionne !!!
+-> C'est à dire que cela retourne false si referenceValue ne matche pas ET/OU si produitValue ne matche pas
+Problème : si on retourne false dans la première condition, alors on ne vérifie pas la seconde. 
+Solution : crée deux fonctions différentes, si une d'entre elle retourne false, alors inputVerif retourne false ??
 
 -----
 
