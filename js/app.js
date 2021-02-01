@@ -1,18 +1,18 @@
 const app = {
-// Etape à suivre pour ce profjet trop cool qui n'est pas une bataille navale
-// Vérification des champs entrées
+    // Etape à suivre pour ce profjet trop cool qui n'est pas une bataille navale
+    // Vérification des champs entrées
 
-// - référence 
+    // - référence 
 
-        // On défini les regex + les input + le bouton
-        referenceRegex : new RegExp('([a-z]){3}-([0-9]){3}'), // autorise 3 lettres maj et min et 3 chiffre entre 0 et 9
-        nameRegex : new RegExp('([A-Z]){1}([a-z]){9}'), // autorise les caractères de a à z avec seulement 10 min et max
-        inputReference : document.getElementById('reference-input').value,
-        inputName : document.getElementById('produit-input').value,
-        inputPrix : document.getElementById('prix-input').value,
-        form : document.getElementById('formulaire'),
+    // On défini les regex + les input + le bouton
+    referenceRegex: new RegExp('([a-z]){3}-([0-9]){3}'), // autorise 3 lettres maj et min et 3 chiffre entre 0 et 9
+    nameRegex: new RegExp('([A-Z]){1}([a-z]){9}'), // autorise les caractères de a à z avec seulement 10 min et max
+    inputReference: document.getElementById('reference-input'),
+    inputName: document.getElementById('produit-input'),
+    inputPrix: document.getElementById('prix-input'),
+    form: document.getElementById('formulaire'),
 
-// On va devoir par la suite faire un AddEventListener à chaque fois qu'on appuye sur le bouton
+    // On va devoir par la suite faire un AddEventListener à chaque fois qu'on appuye sur le bouton
 
 
     /**
@@ -20,11 +20,12 @@ const app = {
      * https://medium.com/better-programming/click-vs-submit-eventlisteners-536b62be9359
      */
     init: function() {
-    //TODO : RÉCUPÉRER LES VALEURS DES INPUTS + VÉRIFIER LES AUTRES FONCTIONS
-    // Raison : quand on appuye sur envoyer, on arrive pas à les voir dans le console.log, ni à voir les messages d'erreurs
-    // Mais où est la couille (de) Simone ?
+        //TODO : RÉCUPÉRER LES VALEURS DES INPUTS + VÉRIFIER LES AUTRES FONCTIONS
+        // Raison : quand on appuye sur envoyer, on arrive pas à les voir dans le console.log, ni à voir les messages d'erreurs
+        // Mais où est la couille (de) Simone ?
+
         app.form.addEventListener('submit', app.handleClick);
-        console.log(app.inputReference);
+
     },
 
     //ici, il faut récupérer les éléments input de Reférence, name et prix
@@ -35,29 +36,38 @@ const app = {
     //On appelle cette fonction si des valeurs sont entrées dans les input et qu'elles
     //sont true à la vérification !
 
-    handleClick: function (evt){
+    handleClick: function(evt) {
+
         evt.preventDefault();
-        app.inputVerif(app.inputReference, app.inputName, app.inputPrix);
+        let referenceValue = app.inputReference.value;
+        let produitValue = app.inputName.value;
+        let prixValue = app.inputPrix.value;
+
+
+        app.newRow(referenceValue, produitValue, prixValue);
     },
-    
-    newRow : function (){
-        let nodeTd1 = document.createElement("tr");
-        let nodeTd2 = document.createElement("tr");
-        let nodeTd3 = document.createElement("tr");
-        console.log(nodeTd1);
-        console.log(nodeTd2);
-        console.log(nodeTd3);
+
+    newRow: function(inputReference, inputName, inputPrix) {
+
+        let newTr = document.createElement("tr");
+        let tbody = document.querySelector("#tableau > table > tbody");
+        tbody.appendChild(newTr);
+        let nodeTd1 = document.createElement("td");
+        let nodeTd2 = document.createElement("td");
+        let nodeTd3 = document.createElement("td");
         nodeTd1.className = 'colonnesRef';
         nodeTd2.className = 'colonnesProduit';
         nodeTd3.className = 'colonnesPrix';
         nodeTd1.textContent = inputReference;
-        nodeTd2.textContent = inputNAme;
+        nodeTd2.textContent = inputName;
         nodeTd3.textContent = inputPrix;
-        inputReference.appendChild = nodeTd1;
-        inputName.appendChild = nodeTd2;
-        inputPrix.appendChild = nodeTd3;
-    },
-    
+        newTr.appendChild(nodeTd1);
+        newTr.appendChild(nodeTd2);
+        newTr.appendChild(nodeTd3);
+        app.prixValue = "";
+        app.produitValue = "";
+        app.referenceValue = "";
+    }
 
     // ici, on va faire la vérification des input !
     // Pour le moment, il me semble plus judicieux de faire un if et un else
@@ -68,36 +78,48 @@ const app = {
     // si ce n'est pas le cas, on veux afficher des messages d'erreurs 
     // sous la case de l'input correspondante !
 
-    inputVerif : function () {
-        if (app.inputReference !== app.referenceRegex || app.inputName !== app.nameRegex ){
+    /*inputVerif: function(referenceValue, produitValue, prixValue) {
 
-           if(app.inputReference !== app.referenceRegex) {
-                let errorRef = document.querySelector("#reference-input");
-                let errorMessageRef = document.createElement('p');
-                errorMessageRef.className = 'error-message';
-                errorMessageRef.textContent = 'Veuillez entrer une référence valide';
-                errorRef.appendChild = errorMessageRef;
-            }
-            else if(app.inputName !== app.nameRegex || inputName == '') {
+         if (referenceValue !== app.referenceRegex || produitValue !== app.nameRegex) {
+            //TODO: revoir la vérification des regex*
+            
+            RegExp.prototype[@ @match]()
+            https: //developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp/@@match
+            
+            if (referenceValue !== app.referenceRegex) {
+                console.log("referenceValue");
+                if (document.querySelector("#errorRef") == null) {
+                    let errorRef = document.querySelector("#reference-input");
+                    let errorMessageRef = document.createElement('p');
+                    errorMessageRef.id = 'errorRef';
+                    errorMessageRef.className = 'error-message';
+                    errorMessageRef.textContent = 'Veuillez entrer une référence valide';
+                    errorRef.appendChild(errorMessageRef); 
+                    errorRef.insertAdjacentElement("afterend", errorMessageRef)
+                }
+            } else
+            if (produitValue !== app.nameRegex || produitValue == '') {
                 let errorName = document.querySelector("#produit-input");
                 let errorMessageName = document.createElement('p');
                 errorMessageName.className = 'error-message';
-                errorMessageName.textContent = 'Veuillez entrer un nom de produit valide';
-                errorName.appendChild = errorMessageName;
-            }
-            else if(app.inputPrix == '') {
+                //errorMessageName.textContent = 'Veuillez entrer un nom de produit valide';
+                /*errorName.appendChild(errorMessageName); 
+                errorName.insertAdjacentHTML("afterend", '<p>Veuillez entrer une référence valide<p>')
+            } else if (prixValue == '') {
                 let errorName = document.querySelector("#produit-input");
                 let errorMessageName = document.createElement('p');
                 errorMessageName.className = 'error-message';
                 errorMessageName.textContent = 'Veuillez entrer un prix';
-                errorName.appendChild = errorMessageName;
-            } 
+                errorName.appendChild(errorMessageName);
+            }
         } else {
             app.newRow();
-        }
-    }
+        } */
 }
 
+
 // ici, on écoute Init au chargement du DOM
+
+
 
 document.addEventListener('DOMContentLoaded', app.init);
