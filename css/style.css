@@ -129,6 +129,14 @@ td {
     border-bottom : solid var(--couleurfoncee1) 1px;
 }
 
+td:nth-child(1){
+    text-transform: uppercase;
+}
+
+td:nth-child(2)::first-letter{
+    text-transform: capitalize ;
+}
+
 tr:nth-child(2n) {
     background-color: white;
 }

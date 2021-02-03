@@ -31,12 +31,12 @@ Quant à la vérification, on prend une autre approche plus simple :
   
 - Lorsque Input est true => nouvelle ligne au tableau +  input vidé (fait dans la fonction handleClick, comme cela été le cas dans BN) => fonctionnel
 
-## Prochaine étape
+**03/02/2021 :**
 
-- Faire en sorte que InputVerif fonctionne !!!
--> C'est à dire que cela retourne false si referenceValue ne matche pas ET/OU si produitValue ne matche pas
-Problème : si on retourne false dans la première condition, alors on ne vérifie pas la seconde. 
-Solution : crée deux fonctions différentes, si une d'entre elle retourne false, alors inputVerif retourne false ??
+- InputVérif fonctionne (youhou !!!!)
+- Et tout fonctionne (yyyyyyoooooouuuhhhhh!!!)
+- Modif du regex
+- Modif CSS/HTML pour forcer la casse
 
 -----
 

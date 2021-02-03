@@ -5,8 +5,8 @@ const app = {
     // - référence 
 
     // On défini les regex + les input + le bouton
-    referenceRegex: new RegExp('([a-z]){3}-([0-9]){3}'), // autorise 3 lettres maj et min et 3 chiffre entre 0 et 9
-    nameRegex: new RegExp('([A-Z]){1}([a-z]){9}'), // autorise les caractères de a à z avec seulement 10 min et max
+    referenceRegex: new RegExp('([0-9]){3}-([a-zA-Z]){3}'), // autorise 3 lettres maj et min et 3 chiffre entre 0 et 9
+    nameRegex: new RegExp('([a-zA-Z]){2,50}'), // autorise les caractères de a à z avec seulement 10 min et max
     inputReference: document.getElementById('reference-input'),
     inputName: document.getElementById('produit-input'),
     inputPrix: document.getElementById('prix-input'),
@@ -50,42 +50,28 @@ const app = {
             app.inputReference.value = "";
             app.inputName.value = "";
             app.inputPrix.value = "";
+            document.getElementById("produit-input-message").style.display = "none";
+            document.getElementById("reference-input-message").style.display = "none";
         }
-        ;
-
     },
 
     inputVerif: function(referenceValue, produitValue) {
 
-        // TODO : Faire fonctionner inputVerif
         // on vérifie dans un premier temps l'input Reference
+        $matchCheck = referenceValue.match(app.referenceRegex);
         if (referenceValue.match(app.referenceRegex) === null || produitValue.match(app.nameRegex) === null ){
+            console.log($matchCheck)
 
-        
-        if (referenceValue.match(app.referenceRegex) === null) {
-            console.log(matchCheck);
-                // on va chercher le message d'erreur 
-                let referenceInputErrorMessage = document.getElementById('reference-input-message');
-                console.log(referenceInputErrorMessage);
-                //on passe son affichage en display block
-                let styleCheck = referenceInputErrorMessage.style.display;
-                referenceInputErrorMessage.style.display = 'block';
-                console.log(styleCheck);
-
-            } 
-
-        if (produitValue.match(app.nameRegex) === null) {
-                // on va chercher le message d'erreur 
-                let produitInputErrorMessage = document.getElementById('reference-input-message');
-                //on passe son affichage en display block
-                produitInputErrorMessage.style.display = 'block';
-                
-            } 
-            
+            if (referenceValue.match(app.referenceRegex) === null) {
+                    document.getElementById("reference-input-message").style.display = "block";
+                } 
+            if (produitValue.match(app.nameRegex) === null) {                   
+                    document.getElementById("produit-input-message").style.display = "block";
+                } 
             return false;
         }
-        else {
-            return true;
+         else {
+            return true;       
         }
     },
 
@@ -102,7 +88,7 @@ const app = {
         nodeTd3.className = 'colonnesPrix';
         nodeTd1.textContent = inputReference;
         nodeTd2.textContent = inputName;
-        nodeTd3.textContent = inputPrix;
+        nodeTd3.textContent = inputPrix + "€";
         newTr.appendChild(nodeTd1);
         newTr.appendChild(nodeTd2);
         newTr.appendChild(nodeTd3);
