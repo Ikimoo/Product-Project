@@ -8,15 +8,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0434b5e439.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./front-end/assets/css/reset.css">
+    <link rel="stylesheet" href="./front-end/assets/css/style.css">
+    <title>MC Products</title>
 </head>
 
 <body>
-    <main>
-        <h1>Projet Trop Cool du Futur</h1>
+
+    <header>
+        <div id="div-title">
+            <i class="fab fa-confluence"></i>
+            <p id="titre-site">MC Products</p>
+        </div>
+        <div id="espace-utilisateur">
+            <p id="name">Michelle Peugeot</p>
+            <img src ="./front-end/assets/images/profil-picture.jpg" alt="Photo de Profil" id="profil-picture"/>
+        </div>
+
+    </header>
+    <div id="container-main-nav">
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Ajouter</a></li>
+                <li><a href="#">Rechercher</a></li>
+                <li><a href="#">Se deconnecter</a></li>
+            </ul>
+
+        </nav>
+     <main>
+        <h1>Ajouter un nouveau produit</h1>
         <section id="formulaire">
             <form action="">
                 <div id="labels">
@@ -47,12 +70,18 @@
                     <th>Référence</th>
                     <th>Nom du produit</th>
                     <th>Prix</th>
+                    <th>Modifier <br>
+                        Supprimer</th>
                 </thead>
                 <tbody>
                     <tr>
                         <td>123-ATT</td>
                         <td>Shampoing Blabla</td>
                         <td>28 €</td>
+                        <td>
+                            <a href="#"><i class="fas fa-pen"></i></a>
+                            <a href="#"><i class="fas fa-times-circle"></i></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>123-AET</td>
@@ -61,8 +90,9 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
-    </main>
+        </section>   
+        </main>
+    </div>
 
     <script src="./js/app.js"></script>
 

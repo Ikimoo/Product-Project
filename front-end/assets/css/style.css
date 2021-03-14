@@ -1,7 +1,80 @@
 body{
     font-family: 'lato', sans-serif;
+
+}
+
+#container-main-nav{
     display: flex;
-    justify-content: center;
+}
+/*HEADER*/
+header {
+    background-color: var(--couleurfoncee1);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 7rem;
+}
+
+#div-title {
+    display : flex;
+    align-items : center;
+}
+
+.fa-confluence{
+    color : var(--couleurfoncee2);
+    font-size: 3rem;
+    padding-right : 1rem;
+}
+
+#titre-site{
+    color:white;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 3rem; 
+}
+
+#espace-utilisateur {
+    color : white;
+    display : flex;
+    align-items: center;
+}
+
+#name {
+    padding-right : 1rem;
+
+
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#profil-picture {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+/*NAV*/
+
+nav {
+    height: 100vh;
+    width: 15%;
+    background-color : var(--couleurclaire1);
+    padding-left: 2em;
+    padding-top : 8em;
+    text-transform: uppercase;
+}
+
+
+nav > ul > li  {
+    margin : 2em 0;
+}
+
+nav > ul > li > a {
+    color : var(--couleurfoncee1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav > ul > li > a:hover {
+    color : var(--couleurfoncee2);
 }
 
 .input-error{
@@ -10,11 +83,17 @@ body{
 
 h1{
     color:var(--couleurfoncee2);
-    font-family: 'Abril Fatface', cursive;
-    font-size: 48px;
+    font-weight : bold;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 3rem;
     margin-top: 3rem;
+    text-transform : uppercase;
+}
+
+main {
+    width: 100%;
+
 }
 /* FORMULAIRE*/
 #formulaire {
@@ -22,6 +101,7 @@ h1{
     height: 300px;
     background: var(--couleurclaire1);
     border-radius: 20px;
+    margin: auto;
 }
 
 form {
@@ -83,6 +163,15 @@ label {
     display : none;
 }
 
+.fa-pen {
+    text-decoration: none;
+    color : var(--couleurfoncee1);
+}
+
+.fa-times-circle {
+    color : var(--couleurfoncee2);
+    padding-left : 1em;
+}
 
 /* BOUTON*/
 #button {
@@ -111,6 +200,7 @@ button {
 /* TABLEAU*/
 table {
     width: 654px;
+    margin: auto;
     margin-top : 3rem;
 }
 

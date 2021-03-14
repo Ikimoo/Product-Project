@@ -20,12 +20,12 @@ const app = {
      * https://medium.com/better-programming/click-vs-submit-eventlisteners-536b62be9359
      */
     init: function() {
-        //TODO : RÉCUPÉRER LES VALEURS DES INPUTS + VÉRIFIER LES AUTRES FONCTIONS
+       
         // Raison : quand on appuye sur envoyer, on arrive pas à les voir dans le console.log, ni à voir les messages d'erreurs
         // Mais où est la couille (de) Simone ?
 
         app.form.addEventListener('submit', app.handleClick);
-
+        
 
     },
 

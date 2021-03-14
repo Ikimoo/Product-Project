@@ -17,7 +17,7 @@ Notre README va nous servir à ce qu'on puisse tracker notre avancement au fur e
 - Les tr et td se rajoute sur le formulaire ! :parfait: Youpi !
 - J'ai créé un fichier tentative.js pour y mettre nos essais, ce qui donnera notre app.js plus lisible, sans perdre ce qu'on a fait avant. Il faudra juste être clair dans nos commentaires et dire où c'était, et pourquoi on l'a enlevé.
   
-Quant à la vérification, on prend une autre approche plus simple : 
+Quant à la vérification, on prend une autre approche plus simple :
 
 - On a ajouté des balises p sous chaques input, leurs a donnés une classe identique pour les afficher en rouge quand le message apparait et on a également donné à chacun un id différent.
 - Le but est d'avoir les messages qui s'affichent en fonction de la vérification. Pour cela, si une entrée est juste, avec la balise reste en display:none. Par contre, si l'entrée saisie est fausse, alors on affiche la balise p grâce à display:block.
