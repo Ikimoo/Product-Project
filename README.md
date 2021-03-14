@@ -38,10 +38,15 @@ Quant à la vérification, on prend une autre approche plus simple :
 - Modif du regex
 - Modif CSS/HTML pour forcer la casse
 
+
+**13/03/2021 :**
+
+- Intégration de la page principal terminé, et première découpe effectuée
+- installation de Lumen pour le back-end
+
 -----
 
-## V2 : avec PHP
+## A faire :
 
-- Lier à la base de donnée pour que les champs s'enregistrent dans une BDD,
-- Faire une fonction recherche (nouvelle section qui s'ouvre et affiche les champs de recherche. Le tableau se modifie en fonction de la recherche),
-- Vérifier la référence produit : ne doit pas déjà se trouver dans la BDD
+- Lier à la base de donnée pour que les champs s'enregistrent dans une BDD (BDD créée, et normalement liée, plus qu'à tester !)
+- Terminée les views et commencer les routes pour pouvoir tester si les pages fonctionnent
