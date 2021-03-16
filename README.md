@@ -38,15 +38,29 @@ Quant à la vérification, on prend une autre approche plus simple :
 - Modif du regex
 - Modif CSS/HTML pour forcer la casse
 
-
 **13/03/2021 :**
 
 - Intégration de la page principal terminé, et première découpe effectuée
 - installation de Lumen pour le back-end
+
+**16/03/2021 :**
+
+- Routes dans web.php
+- Vues
+- Création Models, Controllers
+- Création d'une fonction home dans MainController (à vérifier)
 
 -----
 
 ## A faire :
 
 - Lier à la base de donnée pour que les champs s'enregistrent dans une BDD (BDD créée, et normalement liée, plus qu'à tester !)
-- Terminée les views et commencer les routes pour pouvoir tester si les pages fonctionnent
+- Continuer les routes pour pouvoir tester si les pages fonctionnent
+- Mettre un placeholder (ou value ?) à l'input référence pour indiquer le regex 
+
+## Idée :
+
+- Popup à l'arrivée sur le site : "Salut, t'es qui toi ?" avec un input pour le nom
+- Quand on arrive sur le site à la place du nom de l'avatar => le nom rentré
+- Encore plus poussé : cookies & session
+

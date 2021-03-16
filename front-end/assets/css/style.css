@@ -110,6 +110,7 @@ form {
     flex-wrap : wrap;
     align-items: center;
     justify-content: center;
+    padding: 0 4rem;
 }
 
 .form-group {
@@ -124,13 +125,28 @@ form {
     flex-direction : column;
 }
 
+#price-input-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+#prix-input-start, #prix-input-end{
+    width: 40%;
+    display: inline-block;
+}
+
+
 input {
     background: rgba(255, 255, 255, 0.69);
     border-radius: 5px;
     border: none;
-    width: 250px;
+    width: 100%;
     height: 33px;
-    margin-right : 4em;
+   
 }
 
 #labels {
@@ -142,7 +158,6 @@ input {
 }
 
 label {
-    padding-left: 4rem;
     font-weight : bold;
     color: var(--couleurfoncee1);
     font-size: 18px;

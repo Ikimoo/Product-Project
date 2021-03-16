@@ -2,10 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Lumen\Routing\Controller as BaseController;
+use Laravel\Lumen\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
-class Controller extends BaseController
+use App\Http\Models;
+
+
+class MainController extends Controller
 {
+
+    /**
+     * Displays the homepage & the 15ths lasts products created
+     *
+     * @return
+     */
+    public function home()
+    {
+
+        $products = DB::table('products')->orderBy('id')->limit(15);
+
+        foreach ($products as $product){
+            $productsToDisplay = [
+                $product->name,
+                $product->id,
+                $product->price,
+            ];
+        };
+
+        return view('main-home', $productsToDisplay);
+
+    }
+
     /**
      * Provide a centralized display of a JSON, with CORS, to all Controllers
      *

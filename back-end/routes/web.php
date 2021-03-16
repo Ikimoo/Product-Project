@@ -11,6 +11,46 @@
 |
 */
 
-// --------- VIDEOGAMES ---------
+$router->get(
+    '/home',
+    [
+        'uses' => 'MainController@home',
+        'as' => 'main-home'
+    ]
+    );
+
+$router->post(
+    '/',
+    [
+        'uses' => 'ProductController@add',
+        'as' => 'product-add'
+    ]
+    );
+
+$router->get(
+    '/{id}',
+    [
+        'uses' => 'ProductController@item',
+        'as' => 'product-item'
+    ]
+    );
+
+$router->patch(
+    '/{id}',
+    [
+        'uses' => 'ProductController@update',
+        'as' => 'product-update'
+    ]
+    );
+
+$router->get(
+    '/search',
+    [
+        'uses' => 'ProductController@search',
+        'as' => 'product-search'
+    ]
+    );
+
+
 
 

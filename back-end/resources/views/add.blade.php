@@ -5,7 +5,7 @@
                     <div id="labels">
                         <div>
                             <label for="reference" id="reference-label">Référence du produit</label>
-                            <p class="error-message message-display" id="reference-input-message">Veuillez entrer une référence valide</p>
+                            <p class="error-message message-display" id="reference-input-message" placeholder="Référence de type 123-ABC">Veuillez entrer une référence valide</p>
                         </div>
                         <div>
                             <label for="produit" id="produit-label">Nom du produit</label>
