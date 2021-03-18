@@ -40,7 +40,7 @@ Quant à la vérification, on prend une autre approche plus simple :
 
 **13/03/2021 :**
 
-- Intégration de la page principal terminé, et première découpe effectuée
+- Intégration de la page principale terminée, et première découpe effectuée
 - installation de Lumen pour le back-end
 
 **16/03/2021 :**
@@ -50,17 +50,20 @@ Quant à la vérification, on prend une autre approche plus simple :
 - Création Models, Controllers
 - Création d'une fonction home dans MainController (à vérifier)
 
+**18/03/2021 :**
+
+- Mettre un placeholder à l'input référence pour indiquer le regex
+- Préparation du html en vue de l'affichage des données depuis la bdd ou injection des données depuis l'app
+
 -----
 
 ## A faire :
 
 - Lier à la base de donnée pour que les champs s'enregistrent dans une BDD (BDD créée, et normalement liée, plus qu'à tester !)
-- Continuer les routes pour pouvoir tester si les pages fonctionnent
-- Mettre un placeholder (ou value ?) à l'input référence pour indiquer le regex 
+- Vérifier et continuer les routes pour pouvoir tester si les pages fonctionnent
 
 ## Idée :
 
 - Popup à l'arrivée sur le site : "Salut, t'es qui toi ?" avec un input pour le nom
 - Quand on arrive sur le site à la place du nom de l'avatar => le nom rentré
 - Encore plus poussé : cookies & session
-
